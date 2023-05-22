@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/boton_flotante.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,35 +9,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
+      //Quitamos el debug
+      debugShowCheckedModeBanner: false,
+      //configurar tema
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          accentColor: Colors.black,
+          //configurar texto
+          textTheme: TextTheme(
+              bodyText2: TextStyle(color: Colors.cyan, fontSize: 30))),
       // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      home: BotonFlotante(),
     );
   }
 }
